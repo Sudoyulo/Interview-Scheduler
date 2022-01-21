@@ -4,7 +4,7 @@ import "components/DayListItem.scss";
 
 export default function DayListItem(props) {
 
-  const { spots, selected, name, onChange, key } = props;
+  const { spots, selected, name, onChange } = props;
 
   const dayClass = classNames('day-list__item',
     {
@@ -24,9 +24,9 @@ export default function DayListItem(props) {
   };
 
   return (
-    <li onClick={() => onChange(name)} className={dayClass} selected={selected} key={key}>
+    <li onClick={() => onChange(name)} className={dayClass} selected={selected} key={name}>
       <h2 className="text--regular">{name}</h2>
-      <h3 className="text--light">{formatSpots}</h3>
+      <h3 className="text--light">{formatSpots()}</h3>
     </li>
   );
 }

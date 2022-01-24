@@ -48,7 +48,6 @@ export default function Application(props) {
   }
 
   function cancelInterview(id) {
-
     return axios
     .delete(`/api/appointments/${id}`)
     .then((response) => {
@@ -65,8 +64,8 @@ export default function Application(props) {
   }
 
   const calendar = dailyAppointments.map((appointment) => {
+    
     const interview = getInterview(state, appointment.interview);
-
     return (
       <Appointment
         key={appointment.id}

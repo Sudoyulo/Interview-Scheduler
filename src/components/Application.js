@@ -47,8 +47,13 @@ export default function Application(props) {
       [id]: appointment
     };
 
-    // setState({...state, appointments});
-
+    return axios
+      .put(`/api/appointments/${id}`, appointment)
+      .then((response) => {
+        console.log("hey",response);
+        setState({...state, appointments});
+      })
+      
   }
 
   const calendar = dailyAppointments.map((appointment) => {

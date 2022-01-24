@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 export default function InterviewerListItem(props) {
 
-  const { name, selected, avatar, setInterviewer, key } = props;
+  const { name, selected, avatar, setInterviewer } = props;
 
   const buttonClass = classNames("interviewers__item", {
     "interviewers__item--selected": selected
@@ -12,7 +12,7 @@ export default function InterviewerListItem(props) {
 
   return (
 
-    <li className={buttonClass} onClick={setInterviewer} key={key}>
+    <li className={buttonClass} onClick={setInterviewer}>
       <img
         className="interviewers__item-image"
         src={avatar}

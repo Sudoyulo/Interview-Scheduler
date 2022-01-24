@@ -31,9 +31,12 @@ export default function Appointment(props) {
     };
 
     transition(SAVING);
-    props.bookInterview(props.id, interview )
+    props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch((error)=> transition(ERROR, true)) 
+      .catch((error)=> {
+        console.log(error)
+        transition(ERROR, true)
+      })
   }
 
   function cancelInterview() {
@@ -42,7 +45,7 @@ export default function Appointment(props) {
       .then(() => {
         transition(EMPTY)
       })
-      .catch((error)=> transition(ERROR,true)) 
+      .catch((error)=> transition(ERROR, true)) 
   }
 
   function confirm() {
@@ -70,7 +73,7 @@ export default function Appointment(props) {
       {mode === DELETING && <Status message="Deleting" />}
       {mode === CONFIRM && <Confirm message="Are you sure?" onCancel={back} onConfirm={cancelInterview} />}
       {mode === EDIT && <Form student={props.interview.student} interviewer={props.interview.interviewer} interviewers={props.interviewers} onSave={save} onCancel={back} />}
-      {mode === ERROR && <Error message={"You forgot something"} />}
+      {mode === ERROR && <Error message={"You forgot something"} onClose={back}/>}
     </article>
 
   );

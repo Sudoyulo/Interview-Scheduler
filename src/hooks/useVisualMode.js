@@ -16,11 +16,7 @@ export default function useVisualMode(initial) {
       setHistory(newHistory);
     }
 
-    console.log("his",history);
-
   };
-
-
 
   function back() {
     

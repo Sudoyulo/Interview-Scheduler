@@ -1,9 +1,11 @@
 import React from "react";
 import "components/InterviewerList.scss"
 import InterviewerListItem from "./InterviewerListItem";
-// import classNames from "classnames";
 
-export default function InterviewerList(props) {
+import PropTypes from 'prop-types';
+
+
+function InterviewerList(props) {
 
   const { interviewers, onChange, value } = props;
   
@@ -13,7 +15,7 @@ export default function InterviewerList(props) {
       key={person.id}
       name={person.name}
       avatar={person.avatar}
-      selected = {value === person.id}
+      selected = {value === person.id} //why arent you selected? value.id?
       setInterviewer={() => onChange(person.id)}
       >
       <img src={person.avatar} alt={person.name} />
@@ -26,8 +28,15 @@ export default function InterviewerList(props) {
       <h4 className="interviewers__header text--light">Interviewer</h4>
       <ul className="interviewers__list">
         {rollCall}
+        
       </ul>
     </section>
   );
 
 };
+
+InterviewerList.propTypes = {
+  interviewers: PropTypes.array.isRequired
+};
+
+export default InterviewerList;

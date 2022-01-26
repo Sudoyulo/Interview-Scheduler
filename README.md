@@ -1,8 +1,23 @@
 # Interview Scheduler
 
+
+# Summary
+
+A modern client application using the React view library.
+-Interviews can be booked between Monday and Friday.
+-Interviews are booked by typing in a student name and clicking on an interviewer from a list of available interviewers.
+-The application makes API requests to load and persist data.
+
+
 ## Setup
 
 Install dependencies with `npm install`.
+-axios
+-cypress
+-storybook
+-babel
+-node-sass
+
 
 ## Running Webpack Development Server
 
@@ -21,6 +36,27 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Running Scheduler Api
+
+Fork scheduler api repository[here](https://github.com/Sudoyulo/scheduler-api).
+
+```sh
+npm start
+```
+
+
+# Screenshots
+Add an appointment:
+!["Add an appointment"](https://github.com/Sudoyulo/scheduler/blob/master/docs/Insert-appointment.png?raw=true)
+
+Error handling:
+!["Error handling"](https://github.com/Sudoyulo/scheduler/blob/master/docs/Error-no-name.png?raw=true)
+
+Delete an appointment:
+!["Delete an appointment"](https://github.com/Sudoyulo/scheduler/blob/master/docs/Delete-appointment.png?raw=true)
+
+
 <!-- v16
 delete babel, sass
 install

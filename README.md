@@ -4,19 +4,19 @@
 # Summary
 
 A modern client application using the React view library.
-### Interviews can be booked between Monday and Friday.
-### Interviews are booked by typing in a student name and clicking on an interviewer from a list of available interviewers.
-### The application makes API requests to load and persist data.
+- Interviews can be booked between Monday and Friday.
+- Interviews are booked by typing in a student name and clicking on an interviewer from a list of available interviewers.
+- The application makes API requests to load and persist data.
 
 
 ## Setup
 
 Install dependencies with `npm install`.
--axios
--cypress
--storybook
--babel
--node-sass
+- axios
+- cypress
+- storybook
+- babel
+- node-sass
 
 
 ## Running Webpack Development Server
@@ -57,14 +57,15 @@ Delete an appointment:
 !["Delete an appointment"](https://github.com/Sudoyulo/scheduler/blob/master/docs/Delete-appointment.png?raw=true)
 
 
-<!-- v16
+<!-- Instructions for M1 users who cant install
+v16
 delete babel, sass
 install
 add .env = true
 install sass
 add env.test =true-->
 
-<!-- Solved. Needed to create a role.
+<!-- Instructions for M1 to make a database
 Step 1: Log into psql normally by running psql in terminal
 Step 2: create a new user called development
 create role development with login password 'development';
@@ -72,7 +73,9 @@ create role development with login password 'development';
 CREATE DATABASE scheduler_development with owner development;
  Step 3.5: Confirm database has owner development with \l (<-lower L as in list) (edited)  -->
 
-<!-- Tab 1: run test scheduler-api with NODE_ENV=test npm start
+<!-- Instructions for M1 to create a fixed database for cypress
+
+Tab 1: run test scheduler-api with NODE_ENV=test npm start
 
 Tab2: log into terminal normally with psql
 CREATE DATABASE scheduler_test with owner development;

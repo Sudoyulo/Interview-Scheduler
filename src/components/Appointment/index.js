@@ -21,12 +21,11 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
 
-
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
-  function save(name, interviewer) {
+  function save(name, interviewer) { //saves interviewer on edit and create
     const interview = {
       student: name,
       interviewer
@@ -77,7 +76,7 @@ export default function Appointment(props) {
       {mode === CREATE && <Form name="" interviewer={null} interviewers={props.interviewers} onSave={save} onCancel={back} />}
       {mode === SAVING && <Status message="Please wait" />}
       {mode === DELETING && <Status message="Deleting" />}
-      {mode === CONFIRM && <Confirm message="Are you sure?" onCancel={back} onConfirm={cancelInterview} />}
+      {mode === CONFIRM && <Confirm message="Are you sure you want delete this appointment?" onCancel={back} onConfirm={cancelInterview} />}
       {mode === EDIT && <Form name={props.interview.student} interviewer={props.interview.interviewer.id} interviewers={props.interviewers} onSave={save} onCancel={back} edit={1} />}
       {mode === ERROR_SAVE && <Error message={"Failed to save"} onClose={back}/>}
       {mode === ERROR_DELETE && <Error message={"Failed to delete"} onClose={back}/>}

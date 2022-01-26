@@ -1,5 +1,3 @@
-
-
 export function getAppointmentsForDay(state, day) {
   let filteredWeekdays = state.days.find(weekday => weekday.name === day)
   if (!filteredWeekdays) return [];
@@ -17,9 +15,6 @@ export function getInterviewersForDay(state, day) {
 }
 
 export function getInterview(state, interview) {
-
   if (!interview) return null;
-
-  return {...interview, interviewer: state.interviewers[interview.interviewer]}
-  
+  return { ...interview, interviewer: state.interviewers[interview.interviewer] }
 };

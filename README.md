@@ -4,9 +4,9 @@
 # Summary
 
 A modern client application using the React view library.
--Interviews can be booked between Monday and Friday.
--Interviews are booked by typing in a student name and clicking on an interviewer from a list of available interviewers.
--The application makes API requests to load and persist data.
+### Interviews can be booked between Monday and Friday.
+### Interviews are booked by typing in a student name and clicking on an interviewer from a list of available interviewers.
+### The application makes API requests to load and persist data.
 
 
 ## Setup

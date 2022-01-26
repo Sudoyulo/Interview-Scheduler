@@ -39,7 +39,7 @@ npm run storybook
 
 ## Running Scheduler Api
 
-Fork scheduler api repository[here](https://github.com/Sudoyulo/scheduler-api).
+Fork scheduler api repository [here](https://github.com/Sudoyulo/scheduler-api).
 
 ```sh
 npm start

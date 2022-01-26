@@ -53,7 +53,6 @@ export default function useApplicationData() {
         setState({ ...state, appointments });
       })
       .then(() => {
-        
         if (!state.appointments[id].interview) {
           let daysCopy = [...state.days]
           daysCopy[getWeekdayNum(id)].spots--;

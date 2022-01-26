@@ -32,17 +32,14 @@ export default function Appointment(props) {
       interviewer
     };
 
-    if (interviewer) {
-      transition(SAVING);
-      props.bookInterview(props.id, interview)
+    transition(SAVING);
+    props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch((error)=> {
         console.log("Error", error)
         transition(ERROR_SAVE, true)
       })
-    } else { //no interviewer
-      transition(ERROR_SAVE, true)
-    }
+    
   }
 
   function cancelInterview() {
